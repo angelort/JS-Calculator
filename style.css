@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color: #00AAFF;
+    --secondary-color: #00FF6C;
+    --border-color: #FFFFFF;
+    --white: rgba(255, 255, 255, .75);
+    --hover-color: rgba(255, 255, 255, .9);
+    --output-color: rgba(0, 0, 0, .75);
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid var(--border-color);
+    outline: none;
+    background-color: var(--white);
+}
+
+.calculator-grid > button:hover {
+    background-color: var(--hover-color);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1 / -1;
+    background-color: var(--output-color);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: flex-end;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
